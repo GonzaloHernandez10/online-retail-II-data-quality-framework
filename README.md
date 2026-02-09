@@ -25,7 +25,7 @@ A. Reglas de Negocio
 
 # :bug: 4. Taxonomía de errores
 
-Los errores tipo Crítico, si bien se excluyen del análisis, no se eliminan del DataSet original. En su lugar, se guardan en un conjunto de Dirty Data con el fin de emplearlo en la mitigación de riesgo y en la fase dos del proyecto.
+Los errores tipo Crítico, si bien se excluyen del análisis, no se eliminan del DataSet original. En su lugar, se guardan en un conjunto de Dirty Data
 
 | CÓDIGO DE ERROR          | DESCRIPCIÓN                         | TIPO        | ACCIÓN                 |
 |--------------------------|-------------------------------------|-------------|------------------------|
