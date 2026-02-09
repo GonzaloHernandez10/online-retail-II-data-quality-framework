@@ -24,7 +24,8 @@ A. Reglas de Negocio
 5. Duplicación de registros: Identificación de registros idénticos por campo crítico e Invoice, conservando solo la primera instancia (Timestamp más antiguo).
 
 # :bug: 4. Taxonomía de errores
-## Códigos de Error y Acciones
+
+Los errores tipo Crítico, si bien se excluyen del análisis, no se eliminan del DataSet original. En su lugar, se guardan en un conjunto de Dirty Data con el fin de utilizarlo en la mitigación de riesgo.
 
 | CÓDIGO DE ERROR          | DESCRIPCIÓN                         | TIPO        | ACCIÓN                 |
 |--------------------------|-------------------------------------|-------------|------------------------|
