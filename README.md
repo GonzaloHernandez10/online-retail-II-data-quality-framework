@@ -41,10 +41,10 @@ Los errores tipo Crítico, si bien se excluyen del análisis, no se eliminan del
     - Error_Code
     - Category
 3. Data Cleaning & Imputation: En base a las reglas de negocio, se separan los registros según la validación que aplique sin modificar la fuente de datos original. Obtención de un DataSet con Dirty Data, un Golden DataSet y un DataSet con registros cancelados.
-4. Cálculo de métricas: Recálculo de ventas netas basado en los datos limpios.
-5. Obtención de datos para el RCA.
-6. Obtención de datos para el Bridge Report.
-7. Exportación de los datos.
+4. Cálculo de métricas: Recálculo de la venta neta basado en los datos limpios.
+5. Obtención de datos para el RCA: Se cálculo el procentaje de los errores, el porcentaje de las transacciones canceladas y el porcentaje de los registros duplicados.
+6. Obtención de datos para el Bridge Report: Además del cálculo de la venta neta basado en los datos limpios, se cálculo la venta neta con los datos cancelados y la varianza entre el total venta bruta inicial y total venta sanitizada.
+7. Exportación de los datos: Se exportaron los datos en archivos con extensión .csv con el fin de utilizar los en la fase dos del proyecto.
 
 # :mag_right: 6. Análisis de Causa Raíz (RCA) - Hallazgos
 Tras auditar los registros excluidos, se identificaron las siguientes causas que podrían estar provocando la inflación en las ventas netas:
@@ -52,7 +52,7 @@ Tras auditar los registros excluidos, se identificaron las siguientes causas que
       - Error crítico: El 0.27% de los registros presentan error crítico, lo que indica un problema de punto de venta ya que no se sabe que se está vendiendo ni por cuanto.
       - Ajustes de sistema: El 0.09% de los registros presentan un error de ajuste de sistema. Este error es el más peligroso ya que son cantidades de venta negativas pero sin rastro de cancelación.
 2. Cancelaciones: El 1.72% de los registros fueron cancelados, por lo que no se toman como activos estratégicos para el cálculo de ventas netas. 
-3. Duplicados: El 0.99% de los registros son valores duplicados. Se considera registro duplicado aquellos que presentan valores duplicados en Invoice, Description, Quantity y Price. Dichos registros no se consideran activos estratégicos para el cálculo de ventas netas. 
+3. Duplicados: El 0.99% de los registros son valores duplicados. Se considera registro duplicado aquellos que presentan valores repetidos en Invoice, Description, Quantity y Price. Dichos registros no se consideran activos estratégicos para el cálculo de ventas netas. 
 
 # :chart_with_upwards_trend: 7. Impacto Financiero (Bridge Report)
 Tras aplicar un proceso de Data Quality al DataSet original y obtener datos válidos y saludables se obtuvo que:
@@ -65,23 +65,26 @@ Tras aplicar un proceso de Data Quality al DataSet original y obtener datos vál
 | (-) Inconsistencias*       | $124.07           |
 | Ingreso bruto inicial      | $9,747,765.93     |
 
-*NOTA: Las inconsistencias representan valores duplicados o valores monetarios residuales (venta neta sanitizada - ingreso bruto inicial). Y es la diferencia de conciliación por remoción de ruido técnico.
+*NOTA: Las inconsistencias representan valores duplicados o valores monetarios residuales (venta neta sanitizada - ingreso bruto inicial). Es la diferencia de conciliación por remoción de ruido técnico.
 
 # :bulb: 8. Resultados y Entregables
-A través de este framework de calidad se logró una purificación del 3.07% de los registros (suma de errores, duplicados y ajustes) los cuales inflaban las ventas netas . Esta limpieza no solo mejoró la precisión técnica, sino que permitió una conciliación financiera de la varianza entre el dato bruto y el auditado que quedó justificada y trazada.
-DataSet "Golden Standard": DataSet curado listo para consumo en herramientas de visualización como Power BI.
-Dataset “Dirty Data”: DataSet con los registros rechazados listos para su auditoría por parte del equipo pertinente. 
-DataSet con cancelaciones: DataSet con los registros marcados como operaciones transaccionales cancelas listo para su análisis.  
-Bridge Report: Comparativa antes y después de las ventas netas.
-Reporte de causa raíz: Indicadores del posible origen de las fallas y errores encontrados en el DataSet original.  
+A través de este framework de calidad y gobernanza de datos se logró una purificación del 3.07% de los registros (suma de errores, duplicados y ajustes) los cuales inflaban las ventas netas. Esta limpieza no solo mejoró la precisión técnica, sino que permitió una conciliación financiera de la varianza entre el dato bruto inicial y el auditado final que quedó justificada y trazada.
+
+Entregables:
+
+1. DataSet "Golden Standard": DataSet curado listo para consumo en herramientas de visualización como Power BI.
+3. Dataset “Dirty Data”: DataSet con los registros rechazados listos para su auditoría por parte del equipo pertinente. 
+4. DataSet con cancelaciones: DataSet con los registros marcados como operaciones transaccionales cancelas listo para su análisis.  
+5. Bridge Report: Comparativa antes y después de las ventas netas.
+6. Reporte de causa raíz: Indicadores del posible origen de las fallas y errores encontrados en el DataSet original.  
 
 # :arrow_forward: 9. Próximos pasos
-Fase 2: Para la fase dos se tiene contemplado la visualización dinámica en Power BI com el objetivo de visualizar: 
+Fase 2: Para la fase dos se tiene contemplado la visualización dinámica en Power BI con el objetivo de visualizar: 
 1. Análisis de la conciliación financiera con las siguientes métricas clave:
       - Venta bruta sanitizada
       - Monto de devoluciones 
       - Venta neta auditada
-El objetivo es cuánto dinero se "evapora" entre la intención de compra y la venta efectiva.
+El objetivo es ver cuánto dinero se "evapora" entre la intención de compra y la venta efectiva.
 2. Análisis de pareto de la "Fuga de Valor" con las siguientes métricas clave:
       - Ventas netas de las cancelaciones
       - Campo Description
