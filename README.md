@@ -38,8 +38,8 @@ Los errores tipo Crítico, si bien se excluyen del análisis, no se eliminan del
 
 1. Data Profiling: Diagnóstico inicial del DataSet. Se verifican valores nulos, formatos, campos críticos y valores duplicados.
 2. Data Labeling & Categorization: En base a la taxonomía de errores y las valoraciones obtenidas en el Data Profiling, se le asigna a cada registro un código de error, y si es el caso, una categoría. Creación de columnas de control:
-  - Error_Code
-  - Category
+  -Error_Code
+  -Category
 3. Data Cleaning & Imputation: En base a las reglas de negocio, se separan los registros según la validación que aplique sin modificar la fuente de datos original. Obtención de un dataset con Dirty Data.
 4. Cálculo de métricas: Recálculo de ventas netas basado en los datos limpios.
 5. Obtención de datos para el RCA.
