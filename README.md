@@ -11,7 +11,7 @@ Impacto: Decisiones comerciales basadas en datos inflados, riesgos en la planeac
 
 1. Framework de calidad y gobernanza de datos: Crear una estructura lógica, basada en reglas y políticas de negocio, que clasifique cada registro del dataset.
 2. Mitigación de riesgo: Identificar y cuantificar las desviaciones financieras mediante técnicas de limpieza y validación lógica.
-3. Análisis de causa raíz (RCA): Clasificar errores (Error Tagging) para explicar al negocio por qué falló la captura de datos (¿Fue una devolución? ¿Fue un ajuste manual? ¿Fue un error de sistema?)
+3. Análisis de causa raíz (RCA): Clasificar errores (Error Tagging) para explicar al negocio qué falló en la captura de datos (¿Fue una devolución? ¿Fue un ajuste manual? ¿Fue un error de sistema?)
 4. Conciliación financiera: Generar el reporte final (Bridge Report) que concilie el dato bruto inicial con el dato validado. 
 
 # :gear: 3. Arquitectura de Calidad de Datos
