@@ -49,8 +49,8 @@ Los errores tipo Crítico, si bien se excluyen del análisis, no se eliminan del
 # :mag_right: 6. Análisis de Causa Raíz (RCA) - Hallazgos
 Tras auditar los registros excluidos, se identificaron las siguientes causas que podrían estar provocando la inflación en las ventas netas:
 1. Tasa de error transaccional: Se identificaron los siguientes porcentajes los cuales indican el tamaño de errores presentados:
-  - Error crítico: El 0.27% de los registros presentan error crítico, lo que indica un problema de punto de venta ya que no se sabe que se está vendiendo ni por cuanto.
-  - Ajustes de sistema: El 0.09% de los registros presentan un error de ajuste de sistema. Este error es el más peligroso ya que son cantidades de venta negativas pero sin rastro de cancelación.
+      - Error crítico: El 0.27% de los registros presentan error crítico, lo que indica un problema de punto de venta ya que no se sabe que se está vendiendo ni por cuanto.
+      - Ajustes de sistema: El 0.09% de los registros presentan un error de ajuste de sistema. Este error es el más peligroso ya que son cantidades de venta negativas pero sin rastro de cancelación.
 2. Cancelaciones: El 1.72% de los registros fueron cancelados, por lo que no se toman como activos estratégicos para el cálculo de ventas netas. 
 3. Duplicados: El 0.99% de los registros son valores duplicados. Se considera registro duplicado aquellos que presentan valores duplicados en Invoice, Description, Quantity y Price. Dichos registros no se consideran activos estratégicos para el cálculo de ventas netas. 
 
@@ -78,11 +78,11 @@ Reporte de causa raíz: Indicadores del posible origen de las fallas y errores e
 # :arrow_forward: 9. Próximos pasos
 Fase 2: Para la fase dos se tiene contemplado la visualización dinámica en Power BI com el objetivo de visualizar: 
 1. Análisis de la conciliación financiera con las siguientes métricas clave:
-  - Venta bruta sanitizada
-  - Monto de devoluciones 
-  - Venta neta auditada
+      - Venta bruta sanitizada
+      - Monto de devoluciones 
+      - Venta neta auditada
 El objetivo es cuánto dinero se "evapora" entre la intención de compra y la venta efectiva.
 2. Análisis de pareto de la "Fuga de Valor" con las siguientes métricas clave:
-  - Ventas netas de las cancelaciones
-  - Campo Description
+      - Ventas netas de las cancelaciones
+      - Campo Description
 
