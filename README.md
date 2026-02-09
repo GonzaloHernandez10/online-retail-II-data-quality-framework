@@ -44,7 +44,7 @@ Los errores tipo Crítico, si bien se excluyen del análisis, no se eliminan del
 4. Cálculo de métricas: Recálculo de la venta neta basado en los datos limpios.
 5. Obtención de datos para el RCA: Se cálculo el procentaje de los errores, el porcentaje de las transacciones canceladas y el porcentaje de los registros duplicados.
 6. Obtención de datos para el Bridge Report: Además del cálculo de la venta neta basado en los datos limpios, se cálculo la venta neta con los datos cancelados y la varianza entre el total venta bruta inicial y total venta sanitizada.
-7. Exportación de los datos: Se exportaron los datos en archivos con extensión .csv con el fin de utilizar los en la fase dos del proyecto.
+7. Exportación de los datos: Se exportaron los datos en archivos con extensión .csv con el fin de utilizarlos en la fase dos del proyecto.
 
 # :mag_right: 6. Análisis de Causa Raíz (RCA) - Hallazgos
 Tras auditar los registros excluidos, se identificaron las siguientes causas que podrían estar provocando la inflación en las ventas netas:
