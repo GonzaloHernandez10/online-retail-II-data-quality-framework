@@ -17,11 +17,11 @@ Impacto: Decisiones comerciales basadas en datos inflados, riesgos en la planeac
 # :gear: 3. Arquitectura de Calidad de Datos
 
 A. Reglas de Negocio
-Completitud: Campos críticos (Invoice, Description, Quantity,  Price) no pueden ser nulos. Si falla, se asigna el código de error CRITICAL_ERROR. No se consideran ingresos operativos útiles para el análisis.
-Integridad de ingresos: Sólo las transacciones con Quantity > 0 y Price > 0 se consideran ingresos operativos útiles para el análisis. Si falla, se asigna el código de error SYSTEM_ADJUSTMENT.
-Mitigación de riesgo de precios: Los precios (Price) negativos o en cero son anomalías del sistema, no errores del cliente. Se asigna el código de error INVALID_UNIT_PRICE y su valor se imputa a cero. 
-Trazabilidad de devoluciones: Toda transacción que comience con 'C' en Invoice debe ser restada de la venta bruta. Se asigna el código de error COMMERCIAL_CANCELATION.
-Deduplicación: Identificación de registros idénticos por campo crítico e Invoice, conservando solo la primera instancia (Timestamp más antiguo).
+1. Completitud: Campos críticos (Invoice, Description, Quantity,  Price) no pueden ser nulos. Si falla, se asigna el código de error CRITICAL_ERROR. No se consideran ingresos operativos útiles para el análisis.
+2. Integridad de ingresos: Sólo las transacciones con Quantity > 0 y Price > 0 se consideran ingresos operativos útiles para el análisis. Si falla, se asigna el código de error SYSTEM_ADJUSTMENT.
+3. Mitigación de riesgo de precios: Los precios (Price) negativos o en cero son anomalías del sistema, no errores del cliente. Se asigna el código de error INVALID_UNIT_PRICE y su valor se imputa a cero. 
+4. Trazabilidad de devoluciones: Toda transacción que comience con 'C' en Invoice debe ser restada de la venta bruta. Se asigna el código de error COMMERCIAL_CANCELATION.
+5. Duplicación de registros: Identificación de registros idénticos por campo crítico e Invoice, conservando solo la primera instancia (Timestamp más antiguo).
 
 # :bug: 4. Taxonomía de errores
 ## Códigos de Error y Acciones
