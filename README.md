@@ -84,6 +84,7 @@ Fase 2: Para la fase dos se tiene contemplado la visualización dinámica en Pow
       - Venta bruta sanitizada
       - Monto de devoluciones 
       - Venta neta auditada
+
 El objetivo es ver cuánto dinero se "evapora" entre la intención de compra y la venta efectiva.
 2. Análisis de pareto de la "Fuga de Valor" con las siguientes métricas clave:
       - Ventas netas de las cancelaciones
